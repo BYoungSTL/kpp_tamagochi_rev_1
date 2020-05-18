@@ -39,7 +39,7 @@ public class Main extends Application {
         }
 
         Button button1 = new Button("Play");
-        Button button2 = new Button("Continue");
+        Button button2 = new Button("Replay");
         Button button3 = new Button("Exit");
         FlowPane root = new FlowPane(Orientation.VERTICAL, 0, 50, button1, button2, button3);
         Scene Tales = new Scene(root);
@@ -101,7 +101,7 @@ public class Main extends Application {
             button2.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    contWind.setTitle("The Loaded Game");
+                    contWind.setTitle("Replay");
                     contWind.setFullScreen(true);
                     contWind.setResizable(false);
                     contWind.show();

@@ -22,31 +22,20 @@ public class Player {
     Rectangle playerModel = new Rectangle();
     public Group playerSub = new Group(playerModel);
     String pathModel;
-    public double[] posMem = {0, 0};
-    public double[] tale = new double[256];
-    public double score;
+    public int hp;
+    public int money;
 
-    public void newImage(String pathName) {
-        try {
-            pathModel = pathName;
-            Image imagePlayer = new Image(new FileInputStream(path + pathName));
-            playerModel.setWidth(50);
-            playerModel.setHeight(50);
-            playerModel.setFill(new ImagePattern(imagePlayer));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     public Player(String PathName, double x, double y) {
         try {
-            score = 0;
+            money = 0;
+            hp = 100;
             pathModel = PathName;
             Image imagePlayer = new Image(new FileInputStream(path + PathName));
             playerModel.setX(x);
             playerModel.setY(y);
-            playerModel.setWidth(50);
-            playerModel.setHeight(50);
+            playerModel.setWidth(0);
+            playerModel.setHeight(0);
             playerModel.setFill(new ImagePattern(imagePlayer));
         } catch (IOException e) {
             e.printStackTrace();
